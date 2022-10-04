@@ -1,0 +1,44 @@
+import 'package:camellapp/screens/ofertasdeempleo.dart';
+import 'package:camellapp/screens/pantalla_inicio.dart';
+import 'package:flutter/material.dart';
+import 'package:camellapp/models/models.dart';
+import 'package:camellapp/screens/screens.dart';
+import 'package:camellapp/screens/detalleoferta.dart';
+import 'package:camellapp/screens/ofertasdeempleo.dart';
+import 'package:camellapp/screens/detalleoferta.dart';
+
+class AppRoutes {
+  static const initialRoute = 'home';
+
+  static final menuOptions = <MenuOption>[
+    MenuOption(
+      routes: 'home',
+      name: 'Pantalla De Inicio',
+      screens: const PantallaDeInicio(),
+      icons: Icons.home_max_outlined,
+    ),
+    MenuOption(
+        routes: 'cat',
+        icons: Icons.add_home_work,
+        name: 'Categorias de Trabajo',
+        screens: const OfertasDeEmpleo()),
+  ];
+  static Map<String, Widget Function(BuildContext)> getAppRoutes() {
+    Map<String, Widget Function(BuildContext)> appRoutes = {};
+    for (final option in menuOptions) {
+      appRoutes
+          .addAll({option.routes: (BuildContext context) => option.screens});
+    }
+    return appRoutes;
+  }
+
+  static Map<String, Widget Function(BuildContext)> routes = {
+    'home': (BuildContext context) => const PantallaDeInicio(),
+    'cat': (BuildContext context) => const OfertasDeEmpleo()
+  };
+  static Route<dynamic> onGenerateRoute(RouteSettings settings) {
+    return MaterialPageRoute(
+      builder: (context) => const PantallaDeInicio(),
+    );
+  }
+}
