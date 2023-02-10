@@ -7,7 +7,7 @@ class Registro extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<Registro> {
-  GlobalKey<FormState> keyForm = new GlobalKey();
+  GlobalKey <FormState> keyForm = new GlobalKey();
   TextEditingController nameCtrl = new TextEditingController();
   TextEditingController emailCtrl = new TextEditingController();
   TextEditingController mobileCtrl = new TextEditingController();

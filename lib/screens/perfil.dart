@@ -1,4 +1,5 @@
 import 'package:camellapp/screens/nuevaPublicacion.dart';
+import 'package:camellapp/screens/editarPerfil.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatelessWidget {
@@ -127,7 +128,7 @@ class Profile extends StatelessWidget {
                             Navigator.push(context, route);
                           },
                           child: Text(
-                            'Crear Publicacion',
+                            'Publicar',
                             style: TextStyle(color: Colors.black),
                           ),
                         ),
@@ -137,7 +138,7 @@ class Profile extends StatelessWidget {
                         ElevatedButton(
                           onPressed: () {
                             final route = MaterialPageRoute(
-                                builder: (context) => Profile());
+                                builder: (context) => const editarPerfil());
                             Navigator.push(context, route);
                           },
                           child: Text(
@@ -151,7 +152,7 @@ class Profile extends StatelessWidget {
                         ElevatedButton(
                           onPressed: () {
                             final route = MaterialPageRoute(
-                                builder: (context) => Profile());
+                                builder: (context) => editarPerfil());
                             Navigator.push(context, route);
                           },
                           child: Text(
